@@ -11,8 +11,18 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
+
+    <!-- Importing Web Component's Polyfill -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.1.4/platform.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.1.4/polymer.js"></script>
+
+    <script type="text/javascript" src="http://cdn.dev.skype.com/uri/skype-uri.js"></script>
+    <!-- Importing Custom Elements -->
+    <link rel="import" href="src/skype-button.html">
   </head>
   <body>
+    <a href="https://github.com/tomalec/skype-button"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
     <div class="wrapper">
       <header>
         <h1>Skype-button</h1>
@@ -26,6 +36,8 @@
           <li><a href="https://github.com/tomalec/skype-button/tarball/master">Download <strong>TAR Ball</strong></a></li>
           <li><a href="https://github.com/tomalec/skype-button">View On <strong>GitHub</strong></a></li>
         </ul>
+
+
       </header>
       <section>
         <h1>
@@ -39,9 +51,9 @@
 
 <h2>
 <a name="demo" class="anchor" href="#demo"><span class="octicon octicon-link"></span></a>Demo</h2>
-
+<skype-button participants="echo123"></skype-button>
 <blockquote>
-<p><a href="http://tomalec.github.io/skype-button">Check it live</a>.</p>
+<p><a href="http://tomalec.github.io/skype-button/examples.html">more examples</a>.</p>
 </blockquote>
 
 <h2>
@@ -175,6 +187,6 @@
       </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>
-    
+
   </body>
 </html>
