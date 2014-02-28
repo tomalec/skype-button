@@ -1,0 +1,28 @@
+{
+  "name": "skype-button",
+  "version": "0.0.1",
+  "homepage": "https://github.com/tomalec/skype-button",
+  "authors": [
+    "Tomek Wytrebowicz <tomalecpub@gmail.com>"
+  ],
+  "description": "Web Component wrapper for Skype URI buttons using Polymer",
+  "main": "src/skype-button.html",
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer",
+    "skype"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "platform": "Polymer/platform#~0.2.0",
+    "polymer": "Polymer/polymer#~0.2.0"
+  }
+}

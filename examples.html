@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Skype-button by tomalec</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+
+    <!-- Importing Web Component's Polyfill -->
+    <script src="http://www.polymer-project.org//platform.js?20140225"></script>
+    <!-- TODO: remove when https://github.com/Polymer/polymer/issues/391 is fixed -->
+    <link rel="import" href="http://www.polymer-project.org//components/polymer/polymer.html">
+
+    <script type="text/javascript" src="http://cdn.dev.skype.com/uri/skype-uri.js"></script>
+    <!-- Importing Custom Elements -->
+    <link rel="import" href="src/skype-button.html">
+
+
+  </head>
+  <body>
+    <a href="https://github.com/tomalec/skype-button"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+    <div class="wrapper">
+        <h1>
+        <a name="skype-button" class="anchor" href="#skype-button"><span class="octicon octicon-link"></span></a><a href="http://tomalec.github.io/skype-button/">&lt;skype-button&gt;</a></h1>
+
+        <p>Web Component wrapper for <a href="http://developer.skype.com/skype-uris/skype-uri-tutorial-webpages">Skype URI buttons</a> using <a href="http://polymer-project.org">Polymer</a></p>
+
+        <blockquote>
+        <p>Maintained by <a href="https://github.com/tomalec">Tomek Wytrębowicz</a>.</p>
+        </blockquote>
+
+        <h2>
+        <a name="demo" class="anchor" href="#demo"><span class="octicon octicon-link"></span></a>Demo</h2>
+        <table>
+            <tr>
+                <td>
+                    <skype-button participants="echo123" listparticipants></skype-button>
+                </td>
+                <td>
+                    <pre><code>&lt;skype-button participants="echo123" listparticipants&gt;&lt;/skype-button&gt;</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <skype-button participants="echo123" listparticipants></skype-button>
+                </td>
+                <td>
+                    <pre><code>&lt;skype-button participants="echo123" listparticipants&gt;&lt;/skype-button&gt;</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <skype-button participants="echo123,echo" listparticipants></skype-button>
+                </td>
+                <td>
+                    <pre><code>&lt;skype-button participants="echo123,echo" listparticipants&gt;&lt;/skype-button&gt;</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <skype-button participants="echo123" name="chat"></skype-button>
+                </td>
+                <td>
+                    <pre><code>&lt;skype-button participants="echo123" name="chat"&gt;&lt;/skype-button&gt;</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <skype-button participants="echo123" name="dropdown"></skype-button>
+                </td>
+                <td>
+                    <pre><code>&lt;skype-button participants="echo123" name="dropdown"&gt;&lt;/skype-button&gt;</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <skype-button participants="echo123" video></skype-button>
+                </td>
+                <td>
+                    <pre><code>&lt;skype-button participants="echo123" video&gt;&lt;/skype-button&gt;</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <skype-button participants="echo123,tomalec" name="call" listtopic topic="Quantum Mechanics 401 (Room: 7; 02/17/2012)"></skype-button>
+                </td>
+                <td>
+                    <pre><code>&lt;skype-button participants="echo123,echo" name="call" listtopic
+                    topic="Quantum Mechanics 401 (Room: 7; 02/17/2012)"&gt;&lt;/skype-button&gt;</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <skype-button participants="echo123" imagesize="32"></skype-button>
+                </td>
+                <td>
+                    <pre><code>&lt;skype-button participants="echo123" imagesize="32"&gt;&lt;/skype-button&gt;</code></pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <skype-button participants="echo123" imagesize="32" imagecolor="white" style="background-color: #0094ff"></skype-button>
+                </td>
+                <td>
+                    <pre><code>&lt;skype-button participants="echo123" imagesize="32"
+                    imagecolor="white" style="background-color: #0094ff"&gt;&lt;/skype-button&gt;</code></pre>
+                </td>
+            </tr>
+        </table>
+        <h2>
+        <a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+        <p><a href="http://opensource.org/licenses/MIT">MIT License</a></p>
+
+        <p><small>Hosted on GitHub Pages &mdash;</small></p>
+
+    </div>
+  </body>
+</html>
+</body>
+</html>

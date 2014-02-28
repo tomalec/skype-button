@@ -1,0 +1,46 @@
+<polymer-element name="skype-button" attributes="name participants listparticipants video topic listtopic imagesize imagecolor">
+    <script>
+    (function(){
+        /**
+         * Skype API does not accept booleans only `"true"` and `"false"` Strings.
+         * So we will map attribute to this.
+         * @param   value [description]
+         * @return {String}     `"true"` for `"true"`,`""`, and `true`; `"false"` otherwise.
+         */
+        function mapSkypeBoolean( value ){
+            return (value === "true" || value === "" || value === true)? "true" : "false";
+        }
+        Polymer('skype-button', {
+            name: "",
+            participants: "",
+            listparticipants: false,
+            video: false,
+            topic: "",
+            listtopic: false,
+            imagesize: null,
+            imagecolor: null,
+            ready: function(){
+                // As Skype API does not support providing element reference, we need to generate uniqueId
+                var uniqueId = String.fromCharCode(65 + Math.floor(Math.random() * 26))
+                        + Date.now();
+                var div = document.createElement("div");
+                div.id = uniqueId;
+                this.appendChild(div);
+                this.style.display = "inline-block";
+                Skype.ui({
+                    name: this.name,
+                    element: uniqueId,
+                    participants: this.participants.split(","),
+                    listParticipants: mapSkypeBoolean( this.listparticipants ),
+                    video: mapSkypeBoolean( this.video ),
+                    topic: this.topic,
+                    listTopic: mapSkypeBoolean( this.listtopic ),
+                    imageSize: this.imagesize,
+                    imageColor: this.imagecolor
+                });
+            }
+        });
+    }());
+    </script>
+
+</polymer-element>
