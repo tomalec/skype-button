@@ -1,0 +1,19 @@
+{
+    "name": "skype-button",
+    "version": "0.0.1",
+    "description": "Web Component wrapper for Skype URI buttons using Polymer",
+    "author": "Tomek Wytrebowicz <tomalecpub@gmail.com>",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/tomalec/skype-button"
+    },
+    "bugs": {
+        "url": "https://github.com/tomalec/skype-button/issues"
+    },
+    "devDependencies": {
+        "grunt": "~0.4.1",
+        "grunt-contrib-connect": "0.3.0",
+        "grunt-contrib-watch": "~0.4.0"
+    }
+}
