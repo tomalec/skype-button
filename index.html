@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Skype-button by tomalec</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Skype-button</h1>
+        <p>Web Component wrapper for Skype URI buttons using Polymer</p>
+
+        <p class="view"><a href="https://github.com/tomalec/skype-button">View the Project on GitHub <small>tomalec/skype-button</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/tomalec/skype-button/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/tomalec/skype-button/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/tomalec/skype-button">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="skype-button" class="anchor" href="#skype-button"><span class="octicon octicon-link"></span></a>&lt;skype-button&gt;</h1>
+
+<p>Web Component wrapper for <a href="http://developer.skype.com/skype-uris/skype-uri-tutorial-webpages">Skype URI buttons</a> using <a href="http://polymer-project.org">Polymer</a></p>
+
+<blockquote>
+<p>Maintained by <a href="https://github.com/tomalec">Tomek Wytrębowicz</a>.</p>
+</blockquote>
+
+<h2>
+<a name="demo" class="anchor" href="#demo"><span class="octicon octicon-link"></span></a>Demo</h2>
+
+<blockquote>
+<p><a href="http://tomalec.github.io/skype-button">Check it live</a>.</p>
+</blockquote>
+
+<h2>
+<a name="install" class="anchor" href="#install"><span class="octicon octicon-link"></span></a>Install</h2>
+
+<p>Using <a href="http://bower.io">Bower</a>, run:</p>
+
+<div class="highlight highlight-bash"><pre><span class="nv">$ </span>bower install --save skype-button
+</pre></div>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<ol>
+<li>
+<p>Import Web Components' polyfill and Skype URI Library:</p>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//cdnjs.cloudflare.com/ajax/libs/polymer/0.1.4/platform.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//cdnjs.cloudflare.com/ajax/libs/polymer/0.1.4/polymer.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"http://cdn.dev.skype.com/uri/skype-uri.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+</li>
+<li>
+<p>Import Custom Element:</p>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"import"</span> <span class="na">href=</span><span class="s">"src/skype-button.html"</span><span class="nt">&gt;</span>
+</pre></div>
+</li>
+<li>
+<p>Start using it!</p>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;skype-button&gt;&lt;/skype-button&gt;</span>
+</pre></div>
+</li>
+</ol><h2>
+<a name="options" class="anchor" href="#options"><span class="octicon octicon-link"></span></a>Options</h2>
+
+<p>Note that, empty attribute (e.g. <code>&lt;skype-button listTopic&gt;</code> is mapped to <code>"true"</code>)</p>
+
+<p>For detailed description, please take a look at <a href="http://developer.skype.com/skype-uris/skype-uri-tutorial-webpages">Skype URI Tutorial</a>.</p>
+
+<table>
+<thead><tr>
+<th>Attribute</th>
+<th>Options</th>
+<th>Default</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td>
+<code>call</code>, <code>chat</code>, <code>dropdown</code>
+</td>
+<td><code>call</code></td>
+<td>If omitted, "audio call" is implied if any <code>participants</code> are specified, and "switch focus to the Skype client" is implied if no participants are specified.</td>
+</tr>
+<tr>
+<td><code>participants</code></td>
+<td><em>string</em></td>
+<td></td>
+<td>Coma-separated list of participants. <em>Required</em> if <code>name</code> is specified.</td>
+</tr>
+<tr>
+<td><code>listParticipants</code></td>
+<td><em>boolean</em></td>
+<td><code>false</code></td>
+<td>Whether to list the participant Skype Names</td>
+</tr>
+<tr>
+<td><code>video</code></td>
+<td><em>boolean</em></td>
+<td><code>false</code></td>
+<td>Whether this is a video call</td>
+</tr>
+<tr>
+<td><code>topic</code></td>
+<td><em>string</em></td>
+<td><code>""</code></td>
+<td>The optional topic string for a conference call, GVC, or multichat.</td>
+</tr>
+<tr>
+<td><code>listTopic</code></td>
+<td><em>boolean</em></td>
+<td><code>false</code></td>
+<td>Whether to list the topic</td>
+</tr>
+<tr>
+<td><code>imageSize</code></td>
+<td>
+<code>10</code>, <code>12</code>, <code>14</code>, <code>16</code>, <code>24</code>, and <code>32</code>
+</td>
+<td><code>16</code></td>
+<td>Which size of the image asset to use</td>
+</tr>
+<tr>
+<td><code>imageColor</code></td>
+<td>
+<code>skype</code>, <code>white</code>
+</td>
+<td><code>skype</code></td>
+<td>Which text color variant of the image asset to use</td>
+</tr>
+</tbody>
+</table><h2>
+<a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h2>
+
+<ol>
+<li>Fork it!</li>
+<li>Create your feature branch: <code>git checkout -b my-new-feature</code>
+</li>
+<li>Commit your changes: <code>git commit -m 'Add some feature'</code>
+</li>
+<li>Push to the branch: <code>git push origin my-new-feature</code>
+</li>
+<li>Submit a pull request :D</li>
+</ol><h2>
+<a name="history" class="anchor" href="#history"><span class="octicon octicon-link"></span></a>History</h2>
+
+<p>For detailed changelog, check <a href="https://github.com/tomalec/skype-button/releases">Releases</a>.</p>
+
+<h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p><a href="http://opensource.org/licenses/MIT">MIT License</a></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/tomalec">tomalec</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
