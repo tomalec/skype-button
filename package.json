@@ -1,6 +1,6 @@
 {
     "name": "skype-button",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "Web Component wrapper for Skype URI buttons",
     "author": "Tomek Wytrebowicz <tomalecpub@gmail.com>",
     "license": "MIT",
