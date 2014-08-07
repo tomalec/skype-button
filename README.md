@@ -6,6 +6,7 @@ Web Component wrapper for [Skype URI buttons](http://developer.skype.com/skype-u
 
 ## Demo
 
+![Preview](/preview.png?raw=true "Preview")
 > [Check it live](http://tomalec.github.io/skype-button).
 
 ## Install
