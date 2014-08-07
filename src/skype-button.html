@@ -1,47 +1,66 @@
 <script type="text/javascript" src="http://www.skypeassets.com/i/scom/js/skype-uri.js"></script>
-<polymer-element name="skype-button" attributes="name participants listparticipants video topic listtopic imagesize imagecolor">
-    <script>
-    (function(){
-        /**
-         * Skype API does not accept booleans only `"true"` and `"false"` Strings.
-         * So we will map attribute to this.
-         * @param   value [description]
-         * @return {String}     `"true"` for `"true"`,`""`, and `true`; `"false"` otherwise.
-         */
-        function mapSkypeBoolean( value ){
-            return (value === "true" || value === "" || value === true)? "true" : "false";
-        }
-        Polymer('skype-button', {
-            name: "",
-            participants: "",
-            listparticipants: false,
-            video: false,
-            topic: "",
-            listtopic: false,
-            imagesize: null,
-            imagecolor: null,
-            attached: function(){
-                // As Skype API does not support providing element reference, we need to generate uniqueId, and pollute light DOM
-                var uniqueId = "SkypeButton" + String.fromCharCode(65 + Math.floor(Math.random() * 26))
-                        + Date.now();
-                var div = document.createElement("div");
-                div.id = uniqueId;
-                this.appendChild(div);
-                this.style.display = "inline-block";
-                Skype.ui({
-                    name: this.name,
-                    element: uniqueId,
-                    participants: this.participants.split(","),
-                    listParticipants: mapSkypeBoolean( this.listparticipants ),
-                    video: mapSkypeBoolean( this.video ),
-                    topic: this.topic,
-                    listTopic: mapSkypeBoolean( this.listtopic ),
-                    imageSize: parseInt(this.imagesize, 10),
-                    imageColor: this.imagecolor
-                });
-            }
-        });
-    }());
-    </script>
+<script>
+(function() {
+    /**
+     * Skype API does not accept booleans only `"true"` and `"false"` Strings.
+     * So we will map attribute to this.
+     * @param   value [description]
+     * @return {String}     `"true"` for `"true"`,`""`, and `true`; `"false"` otherwise.
+     */
+    function mapSkypeBoolean( value ){
+        return (value === "true" || value === "" || value === true)? "true" : "false";
+    }
+    // Creates an object based in the HTML Element prototype
+    var SkypeButtonPrototype = Object.create(HTMLElement.prototype);
 
-</polymer-element>
+    function delegateAttribute( obj, name, defValue ){
+        Object.defineProperty( obj, name, {
+            get: function(){ 
+                var val = this.getAttribute( name );
+                return (val !== null)? val : defValue;
+            },
+            set: function( val ){ 
+                return  this.setAttribute( name, val );
+            },
+            enumerable: true
+        });
+    }
+    delegateAttribute(SkypeButtonPrototype, "name", "");
+    delegateAttribute(SkypeButtonPrototype, "participants", "");
+    delegateAttribute(SkypeButtonPrototype, "listparticipants", false);
+    delegateAttribute(SkypeButtonPrototype, "video", false);
+    delegateAttribute(SkypeButtonPrototype, "topic", "");
+    delegateAttribute(SkypeButtonPrototype, "listtopic", false);
+    delegateAttribute(SkypeButtonPrototype, "imagesize", null);
+    delegateAttribute(SkypeButtonPrototype, "imagecolor", null);
+
+    // Fires when an instance was inserted into the document
+    SkypeButtonPrototype.attachedCallback = function() {
+        // As Skype API does not support providing element reference, we need to generate uniqueId, and pollute light DOM
+        var uniqueId = "SkypeButton" + String.fromCharCode(65 + Math.floor(Math.random() * 26))
+                + Date.now();
+        var div = document.createElement("div");
+        div.id = uniqueId;
+        this.appendChild(div);
+        this.style.display = "inline-block";
+        Skype.ui({
+            name: this.name,
+            element: uniqueId,
+            participants: this.participants.split(","),
+            listParticipants: mapSkypeBoolean( this.listparticipants ),
+            video: mapSkypeBoolean( this.video ),
+            topic: this.topic,
+            listTopic: mapSkypeBoolean( this.listtopic ),
+            imageSize: parseInt(this.imagesize, 10),
+            imageColor: this.imagecolor
+        });
+    };
+
+    // Fires when an attribute was added, removed, or updated
+    // SkypeButtonPrototype.attributeChangedCallback = function(attr, oldVal, newVal) {};
+
+    document.registerElement('skype-button', {
+        prototype: SkypeButtonPrototype
+    });
+}());
+</script>

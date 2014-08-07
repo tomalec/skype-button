@@ -1,7 +1,7 @@
 {
     "name": "skype-button",
-    "version": "0.0.2",
-    "description": "Web Component wrapper for Skype URI buttons using Polymer",
+    "version": "0.0.3",
+    "description": "Web Component wrapper for Skype URI buttons",
     "author": "Tomek Wytrebowicz <tomalecpub@gmail.com>",
     "license": "MIT",
     "repository": {
