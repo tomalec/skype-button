@@ -1,3 +1,4 @@
+<script type="text/javascript" src="http://www.skypeassets.com/i/scom/js/skype-uri.js"></script>
 <polymer-element name="skype-button" attributes="name participants listparticipants video topic listtopic imagesize imagecolor">
     <script>
     (function(){
@@ -20,7 +21,7 @@
             imagesize: null,
             imagecolor: null,
             attached: function(){
-                // As Skype API does not support providing element reference, we need to generate uniqueId
+                // As Skype API does not support providing element reference, we need to generate uniqueId, and pollute light DOM
                 var uniqueId = String.fromCharCode(65 + Math.floor(Math.random() * 26))
                         + Date.now();
                 var div = document.createElement("div");
