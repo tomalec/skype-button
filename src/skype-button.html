@@ -22,7 +22,7 @@
             imagecolor: null,
             attached: function(){
                 // As Skype API does not support providing element reference, we need to generate uniqueId, and pollute light DOM
-                var uniqueId = String.fromCharCode(65 + Math.floor(Math.random() * 26))
+                var uniqueId = "SkypeButton" + String.fromCharCode(65 + Math.floor(Math.random() * 26))
                         + Date.now();
                 var div = document.createElement("div");
                 div.id = uniqueId;
@@ -36,7 +36,7 @@
                     video: mapSkypeBoolean( this.video ),
                     topic: this.topic,
                     listTopic: mapSkypeBoolean( this.listtopic ),
-                    imageSize: this.imagesize,
+                    imageSize: parseInt(this.imagesize, 10),
                     imageColor: this.imagecolor
                 });
             }
