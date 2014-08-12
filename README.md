@@ -17,6 +17,13 @@ Using [Bower](http://bower.io), run:
 $ bower install --save skype-button
 ```
 
+Using [jsDelivr CDN](http://www.jsdelivr.com/#!skype-button) just point to
+```
+//cdn.jsdelivr.net/skype-button/latest/skype-button.html
+```
+
+Or [download as ZIP](https://github.com/my-user/my-repo/archive/master.zip).
+
 ## Usage
 
 1. Import Web Components' polyfill:
@@ -28,8 +35,13 @@ $ bower install --save skype-button
 2. Import Custom Element:
 
     ```html
-    <link rel="import" href="src/skype-button.html">
+    <link rel="import" href="bower_components/skype_button/src/skype-button.html">
     ```
+    or
+    ```html
+    <link rel="import" href="//cdn.jsdelivr.net/skype-button/latest/skype-button.html">
+    ```
+
 
 3. Start using it!
 
